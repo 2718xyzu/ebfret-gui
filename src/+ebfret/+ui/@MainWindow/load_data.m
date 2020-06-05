@@ -1,13 +1,8 @@
 function load_data(self, files, ftype)
     if nargin < 2
         [fname, fpath, ftype] = ...
-            uigetfile({'*.mat', 'ebFRET saved session (.mat)';
-                       '*.dat', 'Raw donor-acceptor time series (.dat)';
-                       '*.tsv', 'SF-Tracer donor-acceptor time series (.tsv)';
-                       '*.mat', 'SMD time series (.mat)';
-                       '*.json', 'SMD time series (.json)';
-                       '*.json.gz', 'SMD time series (.json.gz)';}, ...
-                       'multiselect', 'on');
+            uigetfile('*.*','multiselect', 'on');
+        ftype = 2;
         if (ftype == 0)
             return
         end
